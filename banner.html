@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/banner.css">
+    <script src="js/banner.js"></script>
+</head>
+<body>
+    <div class="banner">
+        <div class="container">
+            <a href="#" class="inner">
+                <img src="images/mainbanner1-1.jpg" alt="">
+            </a>
+            <a href="#" class="inner">
+                <img src="images/mainbanner1-2.png" alt="">
+            </a>
+            <a href="#" class="inner">
+                <img src="images/mainbanner1-3.png" alt="">
+            </a>
+            <a href="#" class="inner">
+                <img src="images/mainbanner1-4.jpg" alt="">
+            </a>
+            <a href="#" class="inner">
+                <img src="images/mainbanner1-5.jpg" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="btn">
+        <button class="btn1">
+            <div class="gamename">테일즈위버</div>
+            <div class="eventname">로그 호라이즌 콜라보 넥슨플레이 이벤트</div>
+            <div class="preogressbar"></div>
+        </button>
+        <button class="btn2">
+            <div class="gamename">메이플스토리M</div>
+            <div class="eventname">메이플스토리M 크리에이터즈 워밍업 시즌 오픈</div>
+            <div class="preogressbar"></div>
+        </button>
+        <button class="btn3">
+            <div class="gamename">메이플스토리 월드</div>
+            <div class="eventname">메이플스토리 월드에 삼성전자 제휴 월드 오픈!</div>
+            <div class="preogressbar"></div>
+        </button>
+        <button class="btn4">
+            <div class="gamename">그랜드체이스 클래식</div>
+            <div class="eventname">신규 캐릭터 아이(AI) 사전 등록 이벤트</div>
+            <div class="preogressbar"></div>
+        </button>
+        <button class="btn5">
+            <div class="gamename">바람의나라</div>
+            <div class="eventname">바람의나라 파트너 크리에이터 발표</div>
+            <div class="preogressbar"></div>
+        </button>
+    </div>
+    <script>
+        document.querySelector('.btn1').addEventListener('click', function(){
+            document.querySelector('.container').style.transform = 'translate(100vw)';
+        });
+
+        document.querySelector('.btn2').addEventListener('click', function(){
+            document.querySelector('.container').style.transform = 'translate(0vw)';
+        });
+
+        document.querySelector('.btn3').addEventListener('click', function(){
+            document.querySelector('.container').style.transform = 'translate(-100vw)';
+        });
+
+        document.querySelector('.btn4').addEventListener('click', function(){
+            document.querySelector('.container').style.transform = 'translate(-200vw)';
+        });
+
+        document.querySelector('.btn5').addEventListener('click', function(){
+            document.querySelector('.container').style.transform = 'translate(-300vw)';
+        });
+    </script>
+
+
+
+
+
+
+</body>
+</html>

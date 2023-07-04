@@ -1,0 +1,524 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+.left {float: left;}
+
+.right {float: right;}
+
+.clear::after {
+    content: '';
+    margin: 0;
+    display: block;
+}
+
+@font-face {
+    font-family: 'NEXON Lv1 Gothic Light OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NEXON Lv1 Gothic Bold OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* filter */
+.filter{ 
+    position: relative;
+    padding: 20px 30px 3px;
+    margin: 29px 24px 20px 0;
+    background-color: #fff;
+}
+
+.filter ul {
+    position: relative;
+    display: flex;
+    margin-top: 80px;
+}
+
+.filter ul > li {
+    display: inline-block;
+    margin: 0 16px 17px 0;
+}
+
+.filter label{
+    transition: all .15s linear,bottom 0s;
+    background-color: transparent;
+    color: #737881;
+    font-size: 0.75rem;
+}
+.filter label:hover {
+    color: #07f;
+}
+
+.filter input[type=radio] {
+    display:none;
+}
+.filter input[type=radio]:checked + label {
+    color: #fff;
+    border: 1px solid #17191d;
+    background-color: #17191d;
+}
+.filter input[type=radio] + label {
+    display: block;
+    height: 21px;
+    padding: 1px 10px 0;
+    letter-spacing: -.3px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.filter input:checked ~ .tabCon{
+    display:block;
+}
+
+.filter .tabCon{
+    display:none; 
+    width: 100%;
+    text-align:left; 
+    padding: 20px;
+    position:absolute; 
+    left:0; top:40px; 
+    clear: both;
+}
+
+
+/* ---pc cardView--- */
+.cardView {
+    padding: 40px 0 40px;
+    overflow: hidden;
+}
+.cardView li {
+    height: 320px;
+    margin: 0 24px 60px 0;
+}
+.tabCon > ul li {
+    float: left;
+    display: block;
+    width: 302px;
+}
+.cardView li .game {
+    height: 320px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all .15s linear;
+}
+.cardView li .game:hover {
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, .16);
+    transition: all .2s linear;
+}
+.tabCon .pc.cardView li .game:hover .gameImg img {
+    transition: all .6s cubic-bezier(0.23, 1, 0.320, 1);
+    transform: scale(1.1) translateZ(0);
+}
+.tabCon .cardView li .game:hover .gameImg::after {
+    transition: all .6s cubic-bezier(0.23, 1, 0.320, 1);
+    opacity: 0;
+}
+
+.tabCon .cardView .game {
+    position: relative;
+    display: block;
+    width: 302px;
+}
+.cardView .gameImg {
+    position: relative;
+    display: block;
+    width: 302px;
+    height: 200px;
+    overflow: hidden;
+}
+.cardView .gameImg img {
+    transform: scale(1) translateZ(0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .15s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.cardView .gameImg::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .15s cubic-bezier(0.23, 1, 0.320, 1);
+    content: '';
+    display: block;
+    width: 302px;
+    height: 200px;
+    background-color: #000;
+    opacity: .1;
+}
+.cardView .gameName {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+}
+.cardView .gameName a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding-top: 224px;
+    color: #17191d;
+    font-size: 1rem;
+    font-family: 'NEXON Lv1 Gothic Bold OTF';
+}
+.cardView .gameName a span {
+    display: block;
+    width: 262px;
+    padding-right: 24px;
+    height: 36px;
+    margin: 0 auto;
+    word-wrap: break-word;
+}
+.cardView .gamePeriod {
+    display: block;
+    width: 262px;
+    height: 32px;
+    margin: 50px auto 0;
+    color: #737881;
+    letter-spacing: -.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cardView .gamePeriod .gameGenre {
+    display: inline-block;
+    color: #9fa1a7;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+.cardView .gamePeriod .event {
+    font-weight: 700;
+    color: #07f;
+    font-size: 0.75rem;
+}
+
+.cardView .gameDeco {
+    display: table;
+    width: 100%;
+    margin-bottom: 12px;
+}
+.cardView .gameDeco .gameState {
+    padding: 4px 0 4px 20px;
+    text-align: left;
+    display: table-cell;
+    white-space: nowrap;
+}
+.cardView .gameDeco .gameState span {
+    display: inline-block;
+    height: 16px;
+    padding: 1px 5px 0;
+    color: #fff;
+    font-size: 0.625rem;
+    line-height: 12px;
+    border-radius: 8px;
+    border: 1px solid #9299ac;
+    text-transform: uppercase;
+}
+.cardView .gameDeco .gameState span:last-child {
+    margin-right: 0;
+}
+.cardView .gameDeco .gameState .update {
+    background-color: #2be283;
+    border-color: #2be283;
+}
+.cardView .gameDeco .gameState .early {
+    background-color: #02b0ff;
+    border-color: #02b0ff;
+}
+.cardView .gameDeco .gameState .reboot {
+    background-color: #ff6060;
+    border-color: #ff6060;
+} 
+
+.cardView .gameDeco .gameDevice {
+    text-align: right;
+    padding-right: 12px;
+    display: table-cell;
+    white-space: nowrap;
+}
+.cardView .gameDeco .gameDevice .iconWrapper {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+    position: relative;
+    z-index: 10000;
+}
+.cardView .gameDeco .gameDevice .iconWrapper:hover .iconOS::before{
+    opacity: 0;
+    transition: all .2s;
+}
+.cardView .gameDeco .gameDevice .iconWrapper:hover .iconOS::after {
+    opacity: 1;
+    transition: all .2s linear;
+}
+
+.cardView .gameDeco .gameDevice .iconWrapper .iconOS {
+    width: 24px;
+    height: 24px;
+}
+.cardView .gameDeco .gameDevice .iconWrapper .iconOS::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: url('../images/set_os.svg') no-repeat 0 0;
+    transition: all .15s linear;
+    opacity: 1;
+}
+.cardView .gameDeco .gameDevice .iconWrapper .iconOS::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: url('../images/set_os.svg') no-repeat -50px 0;
+    transition: all .15s linear;
+    opacity: 0;
+}
+.cardView .gameDeco .gameDevice .iconWrapper .iconMobile {}
+.cardView .gameDeco .gameDevice .iconWrapper .iconMobile::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: url('../images/set_os.svg') no-repeat 0 -50px;
+    transition: all .15s linear;
+    opacity: 1;
+}
+.cardView .gameDeco .gameDevice .iconWrapper .iconMobile::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: url('../images/set_os.svg') no-repeat -50px -50px;
+    transition: all .15s linear;
+    opacity: 0;
+}
+.cardView .gameDeco .gameDevice .iconWrapper .iconConsole::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: url('../images/set_os.svg') no-repeat 0 -100px;
+    transition: all .15s linear;
+    opacity: 1;
+}
+.cardView .gameDeco .gameDevice .iconWrapper .iconConsole::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: url('../images/set_os.svg') no-repeat -50px -100px;
+    transition: all .15s linear;
+    opacity: 0;
+}
+
+.cardView .gameDeco .gameDevice .iconWrapper .iconTooltipWrapper {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .2s linear;
+}
+.cardView .gameDeco .gameDevice .iconWrapper .iconTooltipWrapper::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border: 5px solid transparent;
+    border-bottom-color: #1b1f24;
+}
+.cardView .gameDeco .gameDevice .iconWrapper .iconTooltipWrapper .iconTooltip {
+    position: relative;
+    background-image: #1b1f24;
+    padding: 8px 10px 10px;
+}
+.cardView .gameDeco .gameDevice .iconWrapper .iconTooltipWrapper .iconTooltip .iconTooltipText {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: -.3px;
+}
+.cardView .gameDeco .gameDevice .iconWrapper .iconTooltipWrapper .iconTooltip .iconTooltipText:hover {
+    color: #fff;
+}
+
+.cardView .gameDeco .gameCommunite {
+    position: absolute;
+    top: 222px;
+    right: 20px;
+    z-index: 10000;
+    width: 20px;
+    height: 20px;
+}
+.cardView .gameDeco .gameCommunite a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    transition: all .15s linear,bottom 0s;
+}
+.cardView .gameDeco .gameCommunite a:hover {
+    transition: all .2s linear,bottom 0s;
+}
+.cardView .gameDeco .gameCommunite a:hover .icon::before{
+    opacity: 0;
+}
+.cardView .gameDeco .gameCommunite a:hover .icon::after {
+    opacity: 1;
+}
+
+.cardView .gameDeco .gameCommunite a .icon {}
+.cardView .gameDeco .gameCommunite a .iconYoutube {}
+.cardView .gameDeco .gameCommunite a .iconYoutube::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/set_community.svg') no-repeat 0 -50px;
+}
+.cardView .gameDeco .gameCommunite a .iconYoutube::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/set_community.svg') no-repeat -50px -50px;
+    transition: all .15s linear;
+    opacity: 0;
+} 
+.cardView .gameDeco .gameCommunite a .iconNexon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/set_community.svg') no-repeat 0 0;
+    transition: all .15s linear;
+    opacity: 1;
+}
+.cardView .gameDeco .gameCommunite a .iconNexon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/set_community.svg') no-repeat -50px 0;
+    transition: all .15s linear;
+    opacity: 0;
+}
+.cardView .gameDeco .gameCommunite a .iconFacebook::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/set_community.svg') no-repeat 0 -100px;
+    transition: all .15s linear;
+    opacity: 1;
+}
+.cardView .gameDeco .gameCommunite a .iconFacebook::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/set_community.svg') no-repeat -50px -100px;
+    transition: all .15s linear;
+    opacity: 0;
+}
+.cardView .gameDeco .gameCommunite a .iconTwitter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/set_community.svg') no-repeat 0 -150px;
+    transition: all .15s linear;
+    opacity: 1;
+}
+.cardView .gameDeco .gameCommunite a .iconTwitter::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url('../images/set_community.svg') no-repeat -50px -150px;
+    transition: all .15s linear;
+    opacity: 0;
+}
+
+.cardView .gameCheck {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 302px;
+    height: 200px;
+    padding: 11px 0 0 20px;
+    color: hsla(0, 0%, 100%, .8);
+    letter-spacing: -.6px;
+    opacity: .8;
+    background-color: rgba(0, 0, 0, .1);
+    background-image: linear-gradient(180deg, rgba(0,0,0,.6), transparent 60px);
+    line-height: 20px;
+}
